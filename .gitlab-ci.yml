@@ -21,6 +21,6 @@ dev:
   - echo "Command to deploy in AWS" 
   - ls
   - echo "ls previous folder"
-  - ls ../
+  - ls target/
   only:
   - master
