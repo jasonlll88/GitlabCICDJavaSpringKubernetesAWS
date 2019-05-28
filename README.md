@@ -23,9 +23,17 @@ then run the container of that image
 the -P option is used to map the port inside docker (the expose in the dockerfile) to the host.
 
 ### 2 Update changes to gitlab
+This is the original repo of gitlab, gitlabcicd-group/devopsgitlabspringaws.git, it has develop from the template project of spring boot offers in gitlab
 
+#### Project in GITLAB 
+https://gitlab.com/gitlabcicd-group/devopsgitlabspringaws
 
+I wanted to have it in my own github account, of course the CICD of gitlab doesn't will work here in github.
 
 ### 3 Add CI gitlab
+
+The first thing to add the project to the pipeline is to create the file `.gitlab-ci.yml`
+
+This file is automatically detected by 
 
 https://docs.gitlab.com/ee/ci/examples/
