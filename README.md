@@ -39,3 +39,10 @@ The first thing to add the project to the pipeline is to create the file `.gitla
 This file is automatically detected by 
 
 https://docs.gitlab.com/ee/ci/examples/
+
+
+
+
+# ENVAR 
+
+DEPLOY_TOKEN

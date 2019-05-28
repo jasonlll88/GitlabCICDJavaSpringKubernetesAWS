@@ -24,6 +24,7 @@ maven-build:
 docker-build:
   stage: package
   script:
+  - docker login registry.gitlab.com/gitlabcicd-group/devopsgitlabspringaws -u jasonlll881 -p "$DEPLOY_TOKEN"
   - docker build -t registry.gitlab.com/gitlabcicd-group/devopsgitlabspringaws/spring-docker:0.0.1 .
   - docker push registry.gitlab.com/gitlabcicd-group/devopsgitlabspringaws/spring-docker:0.0.1
   only:
