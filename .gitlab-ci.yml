@@ -18,8 +18,9 @@ build:
 dev:
   stage: deploy
   script:
-  - https://gitlab.com/gitlabcicd-group/devopsgitlabspringaws/-/jobs/artifacts/master/raw/target/demo-0.0.1-SNAPSHOT.jar?job=build
   - echo "Command to deploy in AWS" 
   - ls
+  - echo "ls previous folder"
+  - ls ../
   only:
   - master
