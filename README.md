@@ -28,7 +28,7 @@ This is the original repo of gitlab, gitlabcicd-group/devopsgitlabspringaws.git,
 #### Project in GITLAB 
 https://gitlab.com/gitlabcicd-group/devopsgitlabspringaws
 
-
+git@gitlab.com:gitlabcicd-group/devopsgitlabspringaws.git 
 
 I wanted to have it in my own github account, of course the CICD of gitlab doesn't will work here in github.
 
