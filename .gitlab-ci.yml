@@ -1,5 +1,12 @@
 image: java:8
 
+cache:
+  paths:
+    - ./.m2/repository
+  # keep cache across branch
+  key: "$CI_BUILD_REF_NAME"
+
+
 stages:
   - build
   - deploy
@@ -19,8 +26,8 @@ dev:
   stage: deploy
   script:
   - echo "Command to deploy in AWS" 
-  - ls
+  - ls -al
   - echo "ls previous folder"
-  - ls target/
+  - ls -al target/
   only:
   - master
