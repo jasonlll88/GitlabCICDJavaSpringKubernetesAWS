@@ -10,7 +10,12 @@ public class DemoApplication {
 
 	@GetMapping("/")
 	String home() {
-		return "Spring is here!";
+		return "Spring is here!, jlrm";
+	}
+
+	@GetMapping("/name")
+	String home() {
+		return "Jheison Rodriguez";
 	}
 
 	public static void main(String[] args) {
