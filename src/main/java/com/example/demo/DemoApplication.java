@@ -14,7 +14,7 @@ public class DemoApplication {
 	}
 
 	@GetMapping("/name")
-	String home() {
+	String name() {
 		return "Jheison Rodriguez";
 	}
 
