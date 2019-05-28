@@ -12,8 +12,6 @@ stages:
   
 before_script:
   - chmod +x mvnw
-  - echo $CI_REGISTRY_USER $CI_REGISTRY_TOKEN $CI_REGISTRY
-  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_TOKEN $CI_REGISTRY
   
 maven-build:
   image: maven:3-jdk-8
@@ -26,6 +24,7 @@ maven-build:
 docker-build:
   stage: package
   script:
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_TOKEN $CI_REGISTRY
   - docker build -t registry.gitlab.com/gitlabcicd-group/devopsgitlabspringaws/spring-docker:0.0.1 .
   - docker push registry.gitlab.com/gitlabcicd-group/devopsgitlabspringaws/spring-docker:0.0.1
   only:
