@@ -36,13 +36,10 @@ I wanted to have it in my own github account, of course the CICD of gitlab doesn
 
 The first thing to add the project to the pipeline is to create the file `.gitlab-ci.yml`
 
-This file is automatically detected by 
-
+This file is automatically detected by gitlab
 https://docs.gitlab.com/ee/ci/examples/
 
+For our example we have two stages.
+    one for build the project with maven
+    two for create the docker image an upload to the registry container in gitlab
 
-
-
-# ENVAR 
-
-DEPLOY_TOKEN
