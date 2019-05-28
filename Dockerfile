@@ -1,10 +1,5 @@
-FROM maven:3-jdk-8-alpine
+FROM openjdk:8u111-jdk-alpine
+VOLUME /tmp
+ADD /target/demo-0.0.1-SNAPSHOT.jar app.jar
 
-WORKDIR /usr/src/app
-
-COPY . /usr/src/app
-RUN mvn package
-
-ENV PORT 5000
-EXPOSE $PORT
-CMD [ "sh", "-c", "mvn -Dserver.port=${PORT} spring-boot:run" ]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]

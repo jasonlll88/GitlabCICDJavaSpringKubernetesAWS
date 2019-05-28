@@ -1,38 +1,30 @@
-image: java:8
+image: docker:latest
+services:
+  - docker:dind
 
 variables:
-  MAVEN_OPTS: "-Djava.awt.headless=true -Dmaven.repo.local=./.m2/repository"
-  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version"
-
-  # info of that https://stackoverflow.com/questions/37785154/how-to-enable-maven-artifact-caching-for-gitlab-ci-runner
-cache:
-  paths:
-    - ./.m2/repository
-  # keep cache across branch
-  key: "$CI_BUILD_REF_NAME"
-
+  DOCKER_DRIVER: overlay
+  SPRING_PROFILES_ACTIVE: gitlab-ci
 
 stages:
   - build
-  - deploy
+  - package
   
 before_script:
   - chmod +x mvnw
   
-build:
+maven-build:
+  image: maven:3-jdk-8
   stage: build
-  script: ./mvnw package $MAVEN_CLI_OPTS
+  script: ./mvnw package
   artifacts:
     paths:
-      - target/demo-0.0.1-SNAPSHOT.jar
+      - target/*.jar
       
-      
-dev:
-  stage: deploy
+docker-build:
+  stage: package
   script:
-  - echo "Command to deploy in AWS" 
-  - ls -al
-  - echo "ls previous folder"
-  - ls -al target/
+  - docker build -t registry.gitlab.com/gitlabcicd-group/devopsgitlabspringaws/spring-docker:0.0.1 .
+  - docker push registry.gitlab.com/gitlabcicd-group/devopsgitlabspringaws/spring-docker:0.0.1
   only:
   - master
