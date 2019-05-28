@@ -20,7 +20,7 @@ before_script:
   
 build:
   stage: build
-  script: ./mvnw package
+  script: ./mvnw package $MAVEN_CLI_OPTS
   artifacts:
     paths:
       - target/demo-0.0.1-SNAPSHOT.jar
