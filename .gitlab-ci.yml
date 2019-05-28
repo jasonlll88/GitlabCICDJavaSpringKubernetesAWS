@@ -1,4 +1,4 @@
-image: java:8
+image: wrlennon/alpine-java8-jdk
 
 variables:
   MAVEN_OPTS: "-Djava.awt.headless=true -Dmaven.repo.local=./.m2/repository"
