@@ -1,5 +1,9 @@
 image: java:8
 
+variables:
+  MAVEN_OPTS: "-Djava.awt.headless=true -Dmaven.repo.local=./.m2/repository"
+  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version"
+
 cache:
   paths:
     - ./.m2/repository
