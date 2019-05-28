@@ -18,6 +18,6 @@ build:
 dev:
   stage: deploy
   script:
-  
+  - echo "Command to deploy in AWS"  
   only:
   - master

@@ -23,3 +23,9 @@ then run the container of that image
 the -P option is used to map the port inside docker (the expose in the dockerfile) to the host.
 
 ### 2 Update changes to gitlab
+
+
+
+### 3 Add CI gitlab
+
+https://docs.gitlab.com/ee/ci/examples/
