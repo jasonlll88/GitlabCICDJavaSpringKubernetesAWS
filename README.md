@@ -43,3 +43,7 @@ For our example we have two stages.
     one for build the project with maven
     two for create the docker image an upload to the registry container in gitlab
 
+### 4 Connecting gitlab with EKS
+
+https://docs.gitlab.com/ee/user/project/clusters/eks_and_gitlab/
+
